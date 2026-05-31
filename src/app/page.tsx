@@ -1,28 +1,104 @@
 import Image from "next/image";
+function Icon({ name }: { name: "equipment" | "sonographer" | "interpretation" | "reports" }) {
+  if (name === "equipment") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
+        <rect x="4" y="5" width="16" height="10" rx="2" />
+        <path d="M8 19h8" />
+        <path d="M12 15v4" />
+      </svg>
+    );
+  }
+
+  if (name === "sonographer") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M5 21a7 7 0 0 1 14 0" />
+      </svg>
+    );
+  }
+
+  if (name === "interpretation") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
+        <path d="M6 3v6a4 4 0 0 0 8 0V3" />
+        <path d="M10 13v2a5 5 0 0 0 10 0v-2" />
+        <circle cx="20" cy="10" r="2" />
+        <path d="M6 3H4" />
+        <path d="M14 3h2" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
+      <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
+      <path d="M14 2v5h5" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
+      <path d="M9 9h1" />
+    </svg>
+  );
+}
 
 const services = [
-  "Echocardiograms",
-  "Carotid Ultrasound with CIMT",
-  "AAA Screening",
-  "Venous Ultrasound",
-  "Arterial Ultrasound",
-  "Thyroid & General Ultrasound",
+  {
+    title: "Echocardiograms",
+    description: "Cardiac ultrasound studies interpreted by board-certified cardiologists.",
+  },
+  {
+    title: "Carotid Ultrasound with CIMT",
+    description: "Evaluate carotid artery disease and measure carotid intima-media thickness.",
+  },
+  {
+    title: "AAA & Aorto-Iliac Ultrasound",
+    description: "Comprehensive abdominal aorta and common iliac artery ultrasound evaluation with color flow Doppler, velocity measurements, and physician interpretation.",
+  },
+  {
+    title: "Venous Ultrasound",
+    description: "Venous evaluations including DVT and venous insufficiency studies.",
+  },
+  {
+    title: "Arterial Ultrasound",
+    description: "Upper and lower extremity arterial assessments and circulation studies.",
+  },
+  {
+    title: "Thyroid & General Ultrasound",
+    description: "Thyroid imaging and additional general ultrasound examinations.",
+  },
 ];
 
 const solutionSteps = [
-  "Equipment",
-  "Sonographer",
-  "Physician Interpretation",
-  "Professional Reports",
+  {
+    title: "Equipment",
+    icon: "equipment" as const,
+    description: "Portable ultrasound equipment brought directly to your office.",
+  },
+  {
+    title: "Sonographer",
+    icon: "sonographer" as const,
+    description: "Experienced, credentialed ultrasound professionals perform studies on-site.",
+  },
+  {
+    title: "Interpretation",
+    icon: "interpretation" as const,
+    description: "Physician-interpreted reports available for clinical review.",
+  },
+  {
+    title: "Reports",
+    icon: "reports" as const,
+    description: "Clear, professional documentation delivered back to the practice.",
+  },
 ];
 
 const differentiators = [
-  "No equipment purchase",
-  "No sonographer hiring",
-  "Flexible scheduling",
-  "Direct communication",
-  "Echo reports typically available within 24 hours",
-  "Personalized service for your practice",
+  "Orders sent directly to ECHOHeart Imaging",
+  "We coordinate patient scheduling whenever possible",
+  "Flexible appointment availability, including Saturdays",
+  "Responsive communication throughout the process",
+  "Professional reports delivered back to your office",
+  "Local Tampa Bay support",
 ];
 
 export default function Home() {
@@ -93,19 +169,19 @@ export default function Home() {
                 How It Works
               </a>
             </div>
-            <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 text-sm font-semibold text-slate-700 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm backdrop-blur">
-                Serving Tampa Bay
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm backdrop-blur">
-                Physician-interpreted reports
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm backdrop-blur">
-                Flexible practice partnerships
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm backdrop-blur">
-                Echo reports typically within 24 hours
-              </div>
+            <div className="mt-10 flex flex-wrap gap-3 text-sm font-semibold">
+              <span className="rounded-full bg-slate-100 px-4 py-2 text-slate-700">
+                Tampa Bay Based
+              </span>
+              <span className="rounded-full bg-slate-100 px-4 py-2 text-slate-700">
+                Serving Practices Since 2022
+              </span>
+              <span className="rounded-full bg-slate-100 px-4 py-2 text-slate-700">
+                Physician-Interpreted Reports
+              </span>
+              <span className="rounded-full bg-slate-100 px-4 py-2 text-slate-700">
+                Equipment & Sonographer Included
+              </span>
             </div>
           </div>
 
@@ -147,13 +223,14 @@ export default function Home() {
               The Problem
             </p>
             <h2 className="text-5xl font-semibold leading-none tracking-[-0.05em] md:text-7xl">
-              Every referral out creates friction.
+              Sending patients out slows everything down.
             </h2>
           </div>
           <p className="max-w-3xl text-2xl leading-10 text-slate-300">
-            Patients wait. Staff coordinates. Care leaves your office. ECHOHeart Imaging
-            gives practices a cleaner way to offer diagnostic imaging on-site while
-            keeping communication simple and direct.
+            Outside imaging can mean extra scheduling, delayed answers, and patients
+            leaving your workflow. ECHOHeart Imaging helps practices offer ultrasound
+            services on-site with equipment, sonographers, and physician-interpreted
+            reports included.
           </p>
         </div>
       </section>
@@ -163,19 +240,27 @@ export default function Home() {
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
             Our Solution
           </p>
-          <h2 className="max-w-3xl text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
-            We bring everything.
+          <h2 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+            Everything your practice needs. Without the overhead.
           </h2>
+          <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
+            ECHOHeart Imaging provides the clinical imaging support your office needs while keeping the process simple for your team.
+          </p>
           <div className="mt-16 grid gap-4 md:grid-cols-4">
             {solutionSteps.map((step, index) => (
               <div
-                key={step}
-                className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8"
+                key={step.title}
+                className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-200"
               >
-                <div className="mb-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg font-bold text-red-600 shadow-sm">
-                  {index + 1}
+                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-red-600 shadow-sm ring-1 ring-slate-200">
+                  <Icon name={step.icon} />
                 </div>
-                <h3 className="text-2xl font-semibold tracking-tight">{step}</h3>
+                <h3 className="text-2xl font-semibold tracking-tight">
+                  {step.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-slate-600">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -183,35 +268,92 @@ export default function Home() {
       </section>
 
       <section id="practices" className="bg-slate-50 px-6 py-28 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-start">
-          <div className="sticky top-28">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
-              Partnership Model
-            </p>
-            <h2 className="text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
-              Your office bills insurance. We do the work.
-            </h2>
-            <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
-              Designed for practices that want to expand in-office diagnostic
-              services while using their existing billing workflows.
-            </p>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="sticky top-28">
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
+                For Medical Practices
+              </p>
+              <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+                Add ultrasound revenue without hiring staff.
+              </h2>
+              <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
+                ECHOHeart Imaging helps practices offer in-office diagnostic ultrasound while keeping existing workflows and billing processes in place.
+              </p>
+              <a
+                href="#contact"
+                className="mt-10 inline-flex rounded-full bg-slate-950 px-7 py-4 text-base font-semibold text-white transition hover:bg-red-600"
+              >
+                Discuss Practice Options
+              </a>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Equipment Provided",
+                  text: "Portable ultrasound equipment brought directly to your office.",
+                },
+                {
+                  title: "On-Site Sonographer",
+                  text: "Experienced, credentialed ultrasound professionals perform studies in your practice.",
+                },
+                {
+                  title: "Physician Interpretation",
+                  text: "Reports are interpreted by board-certified cardiologists or radiologists, depending on the exam type.",
+                },
+                {
+                  title: "Keep Your Current Billing Process",
+                  text: "Your office continues using its current insurance billing process when appropriate.",
+                },
+                {
+                  title: "Simple Monthly Invoice",
+                  text: "ECHOHeart Imaging invoices your practice monthly for services provided.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200"
+                >
+                  <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-lg leading-8 text-slate-600">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-4">
-            {[
-              "ECHOHeart Imaging provides mobile ultrasound equipment",
-              "Experienced sonographers perform studies in your office",
-              "Physician interpretation is available",
-              "Your practice uses its existing billing process",
-              "ECHOHeart Imaging invoices your practice monthly for services provided",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-3xl border border-slate-200 bg-white p-8 text-xl font-medium shadow-sm"
-              >
-                {item}
+          <div className="mt-16 rounded-[2.5rem] bg-slate-950 p-8 text-white md:p-10">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-300">
+                  Why Practices Partner With Us
+                </p>
+                <h3 className="text-4xl font-semibold leading-none tracking-[-0.04em] md:text-5xl">
+                  More service lines. Less overhead.
+                </h3>
               </div>
-            ))}
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "No equipment purchase",
+                  "No sonographer payroll",
+                  "No training requirements",
+                  "Faster patient convenience",
+                  "Additional in-office revenue opportunities",
+                  "Local Tampa Bay support",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-base font-semibold text-slate-100"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -236,10 +378,15 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
-                key={service}
-                className="rounded-[2rem] border border-slate-200 bg-white p-8 text-2xl font-semibold tracking-tight transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200"
+                key={service.title}
+                className="rounded-[2rem] border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200"
               >
-                {service}
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-slate-600">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -250,14 +397,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-400">
-              Responsive Service
+              Practice Support
             </p>
             <h2 className="text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
-              Need an urgent study?
+              We make it easy for your staff.
             </h2>
             <p className="mt-8 text-xl leading-9 text-slate-300">
-              We work directly with practices to accommodate time-sensitive imaging
-              needs whenever possible.
+              Your office sends the order and our team helps coordinate the next steps. We focus on responsive communication, flexible scheduling, and making the imaging process as smooth as possible for both patients and staff.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -274,37 +420,62 @@ export default function Home() {
       </section>
 
       <section id="reports" className="px-6 py-28 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
-              Professional Reports
-            </p>
-            <h2 className="text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
-              Clear reports. Confident decisions.
-            </h2>
-            <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
-              Sample reports help providers review the quality, format, and level
-              of detail ECHOHeart Imaging delivers.
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
+                Sample Reports
+              </p>
+              <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+                Detailed reports. Clear clinical decisions.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-xl leading-9 text-slate-600">
+              Review sample ECHOHeart Imaging reports to see the level of detail, measurements, findings, and physician interpretation delivered back to your office.
             </p>
           </div>
 
-          <div className="rounded-[3rem] border border-slate-200 bg-slate-50 p-8 shadow-xl shadow-slate-200">
-            <div className="rounded-[2rem] bg-white p-8 shadow-sm">
-              <div className="mb-8 flex items-center justify-between border-b border-slate-200 pb-6">
-                <div className="font-semibold">
-                  <span className="text-red-600">ECHO</span>Heart Imaging Report
+          <div className="grid gap-5 lg:grid-cols-3">
+            {[
+              {
+                title: "Sample Echocardiogram Report",
+                description: "Complete echo report with measurements, Doppler data, findings, and board-certified cardiologist interpretation.",
+                href: "/reports/redacted-echo.pdf",
+              },
+              {
+                title: "Sample Carotid Ultrasound with CIMT Report",
+                description: "Carotid duplex report with Doppler velocities, IMT values, findings, and physician interpretation.",
+                href: "/reports/redacted-carotid-cimt.pdf",
+              },
+              {
+                title: "Sample AAA Screening Report",
+                description: "Abdominal aorta screening report with measurements, velocities, findings, and physician interpretation.",
+                href: "/reports/redacted-aaa.pdf",
+              },
+            ].map((report) => (
+              <div
+                key={report.title}
+                className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200"
+              >
+                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-50 text-red-600 ring-1 ring-slate-200">
+                  <Icon name="reports" />
                 </div>
-                <div className="text-sm text-slate-500">Sample Preview</div>
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
+                  {report.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-slate-600">
+                  {report.description}
+                </p>
+                <a
+                  href={report.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-600"
+                >
+                  View Sample Report
+                </a>
               </div>
-              <div className="space-y-4">
-                <div className="h-4 w-2/3 rounded-full bg-slate-200" />
-                <div className="h-4 w-1/2 rounded-full bg-slate-200" />
-                <div className="h-4 w-5/6 rounded-full bg-slate-200" />
-                <div className="mt-8 aspect-video rounded-2xl bg-slate-900" />
-                <div className="h-4 w-3/4 rounded-full bg-slate-200" />
-                <div className="h-4 w-1/3 rounded-full bg-slate-200" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
