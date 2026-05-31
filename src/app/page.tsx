@@ -396,45 +396,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="patients" className="bg-slate-50 px-6 py-28 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
-              For Patients
-            </p>
-            <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
-              Self-pay ultrasound options are available.
-            </h2>
-            <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
-              ECHOHeart Imaging provides self-pay diagnostic ultrasound services for patients throughout the Tampa Bay area. Call to discuss available exams, pricing, and scheduling options.
-            </p>
-            <a
-              href="tel:8138201630"
-              className="mt-10 inline-flex rounded-full bg-red-600 px-7 py-4 text-base font-semibold text-white shadow-xl shadow-red-600/20 transition hover:bg-red-700"
-            >
-              Call 813-820-1630
-            </a>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              "No insurance required",
-              "Transparent self-pay pricing",
-              "Fast scheduling when available",
-              "Board-certified physician interpretation",
-              "Professional reports",
-              "Tampa Bay based service",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-3xl border border-slate-200 bg-white p-7 text-lg font-semibold text-slate-950 shadow-sm"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="bg-slate-950 px-6 py-28 text-white lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
@@ -517,6 +478,46 @@ export default function Home() {
                 >
                   View Sample Report
                 </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="patients" className="bg-slate-50 px-6 py-28 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
+              For Patients
+            </p>
+            <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+              Self-pay ultrasound options are available.
+            </h2>
+            <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
+              ECHOHeart Imaging provides self-pay diagnostic ultrasound services for patients throughout the Tampa Bay area. Call to discuss available exams, pricing, and scheduling options.
+            </p>
+            <a
+              href="tel:8138201630"
+              className="mt-10 inline-flex rounded-full bg-red-600 px-7 py-4 text-base font-semibold text-white shadow-xl shadow-red-600/20 transition hover:bg-red-700"
+            >
+              Call 813-820-1630
+            </a>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "No insurance required",
+              "Transparent self-pay pricing",
+              "Fast scheduling when available",
+              "Board-certified physician interpretation",
+              "Professional reports",
+              "Tampa Bay based service",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border border-slate-200 bg-white p-7 text-lg font-semibold text-slate-950 shadow-sm"
+              >
+                {item}
               </div>
             ))}
           </div>
