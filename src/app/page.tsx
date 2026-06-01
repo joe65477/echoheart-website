@@ -142,6 +142,25 @@ export default function Home() {
             813-820-1630
           </a>
         </div>
+        <nav className="border-t border-slate-200/70 bg-white md:hidden">
+          <div className="flex gap-5 overflow-x-auto px-6 py-3 text-sm font-semibold text-slate-700">
+            <a href="#practices" className="shrink-0 transition hover:text-red-600">
+              Practices
+            </a>
+            <a href="#services" className="shrink-0 transition hover:text-red-600">
+              Services
+            </a>
+            <a href="#reports" className="shrink-0 transition hover:text-red-600">
+              Reports
+            </a>
+            <a href="#patients" className="shrink-0 transition hover:text-red-600">
+              Patients
+            </a>
+            <a href="#contact" className="shrink-0 transition hover:text-red-600">
+              Contact
+            </a>
+          </div>
+        </nav>
       </header>
 
       <section id="top" className="relative flex min-h-[85vh] items-center overflow-hidden pt-24 md:min-h-screen">
