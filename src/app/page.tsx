@@ -572,7 +572,12 @@ export default function Home() {
                 Email: info@echoheartimaging.com
               </a>
               <div className="rounded-3xl border border-slate-200 p-6">
-                St. Petersburg, FL • Serving the Tampa Bay Area
+                <p className="font-semibold text-slate-950">Administrative Office</p>
+                <p className="mt-2 text-slate-600">100 2nd Ave S, Suite 904S</p>
+                <p className="text-slate-600">St. Petersburg, FL 33701</p>
+                <p className="mt-3 text-base text-slate-500">
+                  Mobile diagnostic ultrasound throughout the Tampa Bay area.
+                </p>
               </div>
             </div>
           </div>
