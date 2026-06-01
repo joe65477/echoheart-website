@@ -188,8 +188,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative rounded-[3rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-300/50">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2.2rem] bg-gradient-to-br from-white via-slate-50 to-slate-200">
+          <div className="relative rounded-[2rem] border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-300/50 md:rounded-[3rem] md:p-4">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[1.6rem] bg-gradient-to-br from-white via-slate-50 to-slate-200 md:aspect-[4/3] md:rounded-[2.2rem]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(220,38,38,0.12),transparent_34%)]" />
               <Image
                 src="/mindraymx7.avif"
@@ -198,7 +198,7 @@ export default function Home() {
                 height={600}
                 className="relative h-full w-full object-contain p-4 md:p-8"
               />
-              <div className="absolute left-6 top-6 rounded-2xl border border-slate-200 bg-white/85 px-5 py-4 shadow-xl shadow-slate-300/40 backdrop-blur">
+              <div className="absolute left-6 top-6 hidden rounded-2xl border border-slate-200 bg-white/85 px-5 py-4 shadow-xl shadow-slate-300/40 backdrop-blur md:block">
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-red-600">
                   Mobile Setup
                 </p>
@@ -206,7 +206,7 @@ export default function Home() {
                   Equipment provided
                 </p>
               </div>
-              <div className="absolute bottom-6 right-6 rounded-2xl border border-slate-200 bg-slate-950/90 px-5 py-4 text-white shadow-xl shadow-slate-300/40 backdrop-blur">
+              <div className="absolute bottom-6 right-6 hidden rounded-2xl border border-slate-200 bg-slate-950/90 px-5 py-4 text-white shadow-xl shadow-slate-300/40 backdrop-blur md:block">
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-red-300">
                   Cardiac Reports
                 </p>
