@@ -144,7 +144,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <section id="top" className="relative flex min-h-[85vh] items-center overflow-hidden pt-24 md:min-h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(220,38,38,0.12),transparent_32%),linear-gradient(135deg,#ffffff_0%,#f8fafc_45%,#eef2f7_100%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
           <div>
@@ -196,7 +196,7 @@ export default function Home() {
                 alt="Mindray MX7 Ultrasound System used by ECHOHeart Imaging"
                 width={800}
                 height={600}
-                className="relative h-full w-full object-contain p-8"
+                className="relative h-full w-full object-contain p-4 md:p-8"
               />
               <div className="absolute left-6 top-6 rounded-2xl border border-slate-200 bg-white/85 px-5 py-4 shadow-xl shadow-slate-300/40 backdrop-blur">
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-red-600">
@@ -225,7 +225,7 @@ export default function Home() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-400">
               The Problem
             </p>
-            <h2 className="text-5xl font-semibold leading-none tracking-[-0.05em] md:text-7xl">
+            <h2 className="text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-5xl lg:text-7xl">
               Sending patients out slows everything down.
             </h2>
           </div>
@@ -243,7 +243,7 @@ export default function Home() {
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
             Our Solution
           </p>
-          <h2 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+          <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-5xl lg:text-7xl">
             Everything your practice needs. Without the overhead.
           </h2>
           <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
@@ -272,12 +272,12 @@ export default function Home() {
 
       <section id="practices" className="bg-slate-50 px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="sticky top-28">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
                 For Medical Practices
               </p>
-              <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+              <h2 className="text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-5xl lg:text-7xl">
                 Add ultrasound revenue without hiring staff.
               </h2>
               <p className="mt-8 max-w-xl text-xl leading-9 text-slate-600">
@@ -368,7 +368,7 @@ export default function Home() {
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
                 Services
               </p>
-              <h2 className="text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
+              <h2 className="text-5xl font-semibold leading-none tracking-[-0.06em] md:text-6xl lg:text-8xl">
                 Focused imaging services.
               </h2>
             </div>
@@ -403,7 +403,7 @@ export default function Home() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-400">
               Practice Support
             </p>
-            <h2 className="text-6xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
+            <h2 className="text-5xl font-semibold leading-none tracking-[-0.06em] md:text-6xl lg:text-8xl">
               We make it easy for your staff.
             </h2>
             <p className="mt-8 text-xl leading-9 text-slate-300">
@@ -430,7 +430,7 @@ export default function Home() {
               <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-red-600">
                 Sample Reports
               </p>
-              <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-7xl">
+              <h2 className="text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-5xl lg:text-7xl">
                 Detailed reports. Clear clinical decisions.
               </h2>
             </div>
